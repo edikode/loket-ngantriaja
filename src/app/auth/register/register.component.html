@@ -1,0 +1,112 @@
+<app-header
+  [title]="'Registrasi'"
+  [mainMenu]="false"
+  [prevLink]="'/'"
+></app-header>
+
+<ng-template appPlaceholder></ng-template>
+
+<div class="row">
+  <div class="col-12">
+    <div *ngIf="isLoading" class="text-center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="text-center py-2">
+      <h1 class="mb-2">NgantriAja</h1>
+      <p>Daftar akun baru di NgantriAja</p>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nama Lengkap</mat-label>
+          <input
+            matInput
+            placeholder="Nama Lengkap"
+            type="text"
+            id="nama_lengkap"
+            ngModel
+            name="nama_lengkap"
+            required
+          />
+          <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>No Telepon</mat-label>
+          <input
+            matInput
+            placeholder="No Telepon"
+            type="text"
+            id="telepon"
+            ngModel
+            name="telepon"
+            required
+          />
+          <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Email"
+            type="email"
+            id="email"
+            ngModel
+            name="email"
+            required
+            email
+          />
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Password"
+            type="password"
+            id="password"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+          />
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Ulangi Password</mat-label>
+          <input
+            matInput
+            placeholder="Ulangi Password"
+            type="password"
+            id="confirm_password"
+            ngModel
+            name="confirm_password"
+            required
+            minlength="6"
+          />
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="mt-3">
+        <button
+          mat-flat-button
+          color="primary"
+          class="rounded-pill button-large full-width"
+        >
+          Daftar
+        </button>
+
+        <p class="text-center mt-4">
+          Sudah punya akun ? <a routerLink="/auth">Login disini</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

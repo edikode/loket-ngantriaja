@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngantreaja": {
+      "hosting": {
+        "mobile-ngantriaja": [
+          "ngantreaja"
+        ]
+      }
+    }
+  }
+}

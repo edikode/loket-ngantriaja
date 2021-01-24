@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountComponent } from './account/account.component';
-import { CategoryComponent } from './category/category.component';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { HomeComponent } from './home/home.component';
-import { MyQueueComponent } from './my-queue/my-queue.component';
+import { CategoryComponent } from './page/category/category.component';
+import { FavoriteComponent } from './page/favorite/favorite.component';
+import { HomeComponent } from './page/home/home.component';
+import { MyQueueComponent } from './page/my-queue/my-queue.component';
 
 const routes: Routes = [
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
   {
     path: '',
     component: HomeComponent,
@@ -25,7 +28,8 @@ const routes: Routes = [
   },
   {
     path: 'account',
-    component: AccountComponent,
+    loadChildren: () =>
+      import('./page/account/account.module').then((m) => m.AccountModule),
   },
 ];
 
