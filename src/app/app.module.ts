@@ -14,9 +14,24 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AccountComponent } from './account/account.component';
+import { MyQueueComponent } from './my-queue/my-queue.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CategoryComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CategoryComponent,
+    HeaderComponent,
+    FooterComponent,
+    AccountComponent,
+    MyQueueComponent,
+    FavoriteComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +40,7 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
 
     // home
     MatGridListModule,

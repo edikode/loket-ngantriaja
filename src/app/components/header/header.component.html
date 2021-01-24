@@ -1,0 +1,26 @@
+<header class="fixed-top header" *ngIf="mainMenu">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="d-flex justify-content-between align-items-center">
+      <span></span>
+      <span>Ngantri Aja</span>
+      <span></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
+
+<header class="fixed-top" *ngIf="!mainMenu">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="d-flex justify-content-between">
+      <button
+        routerLink="{{ prevLink }}"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with arrow-back icon"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span>{{ title }}</span>
+      <span class="width-icon"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
