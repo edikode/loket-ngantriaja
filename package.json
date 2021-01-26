@@ -22,12 +22,15 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "@angular/service-worker": "~11.1.0",
     "@ngrx/effects": "^10.1.2",
     "@ngrx/store": "^10.1.2",
+    "@types/dateformat": "^3.0.1",
+    "dateformat": "^4.5.0",
+    "firebase": "^7.0 || ^8.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1101.1",

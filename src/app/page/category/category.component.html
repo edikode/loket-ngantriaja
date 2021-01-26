@@ -1,10 +1,10 @@
-<app-header [mainMenu]="false" [prevLink]="'/'"></app-header>
+<app-header [mainMenu]="false" [prevLink]="'/'" [title]="slug"></app-header>
 
-<h1 class="mb-0">{{ slug }}</h1>
+<h2 class="mb-0 text-capitalize">{{ slug }}</h2>
 
 <div class="row">
   <div class="col-12">
-    <div class="card shadow-sm mb-3">
+    <div class="card shadow-sm mb-3" routerLink="/detail/AuGp2Mzh2oYBBBXRBtff">
       <div class="row g-0">
         <div class="col-4">
           <div class="p-2">
@@ -12,6 +12,7 @@
               src="assets/image/klinik.png"
               alt="foto klinik"
               class="img-fluid"
+              style="height: 100%"
             />
           </div>
         </div>
@@ -20,7 +21,20 @@
             <h3 class="mb-0" style="font-weight: 500">Dr. Suryadinata</h3>
             <p class="mb-1">Dokter Umum - Jadwal Praktik Pagi dan sore.</p>
             <p class="card-text mb-0">
-              <small class="text-muted">Alamat: Jajag - Kec. Gambiran</small>
+              <small class="text-muted d-block">
+                <mat-icon
+                  style="font-size: 16px; vertical-align: sub; height: 18px"
+                  >location_on</mat-icon
+                >
+                Jajag - Kec. Gambiran</small
+              >
+              <small class="text-muted">
+                <mat-icon
+                  style="font-size: 16px; vertical-align: sub; height: 18px"
+                  >access_time</mat-icon
+                >
+                06:00 - 07:00 WIB</small
+              >
             </p>
           </div>
         </div>
@@ -36,17 +50,29 @@
               src="assets/image/klinik.png"
               alt="foto klinik"
               class="img-fluid"
+              style="height: 100%"
             />
           </div>
         </div>
         <div class="col-8">
           <div class="card-body p-1">
-            <h3 class="mb-0" style="font-weight: 500">
-              Dr. Suryadinata Permana
-            </h3>
+            <h3 class="mb-0" style="font-weight: 500">Dr. Suryadinata</h3>
             <p class="mb-1">Dokter Umum - Jadwal Praktik Pagi dan sore.</p>
             <p class="card-text mb-0">
-              <small class="text-muted">Alamat: Jajag - Kec. Gambiran</small>
+              <small class="text-muted d-block">
+                <mat-icon
+                  style="font-size: 16px; vertical-align: sub; height: 18px"
+                  >location_on</mat-icon
+                >
+                Jajag - Kec. Gambiran</small
+              >
+              <small class="text-muted">
+                <mat-icon
+                  style="font-size: 16px; vertical-align: sub; height: 18px"
+                  >access_time</mat-icon
+                >
+                17:00 - 22:00 WIB</small
+              >
             </p>
           </div>
         </div>
@@ -54,5 +80,3 @@
     </div>
   </div>
 </div>
-
-<app-footer></app-footer>
