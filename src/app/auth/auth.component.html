@@ -1,68 +1,73 @@
-<app-header [title]="'Login'" [mainMenu]="false" [prevLink]="'/'"></app-header>
-
 <ng-template appPlaceholder></ng-template>
 
 <div class="row">
-  <div class="col-12">
-    <div *ngIf="isLoading" class="text-center">
-      <app-loading-spinner></app-loading-spinner>
-    </div>
-    <div class="text-center py-4">
-      <h1 class="mb-2">NgantriAja</h1>
-      <p>
-        Ngantri nggak pakek lama nunggu... <br />
-        ya ngantri aja dulu
-      </p>
-    </div>
-    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-      <div class="form-group">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>No Telepon</mat-label>
-          <input
-            matInput
-            placeholder="No Telepon"
-            type="text"
-            id="telepon"
-            ngModel
-            name="telepon"
-            required
-          />
-          <mat-icon matSuffix>call</mat-icon>
-        </mat-form-field>
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card card-body">
+      <div *ngIf="isLoading" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
       </div>
-      <div class="form-group">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
-          <input
-            matInput
-            placeholder="Password"
-            type="password"
-            id="password"
-            ngModel
-            name="password"
-            required
-            minlength="6"
-          />
-          <mat-icon matSuffix>lock</mat-icon>
-        </mat-form-field>
-      </div>
-      <div class="float-end" style="margin-top: -15px">
-        <a routerLink="/forget-password">Lupa Password ?</a>
-      </div>
-
-      <div class="mt-5">
-        <button
-          mat-flat-button
-          color="primary"
-          class="rounded-pill button-large full-width"
-        >
-          Login
-        </button>
-
-        <p class="text-center mt-4">
-          Belum punya akun ? <a routerLink="/auth/register">Daftar Sekarang</a>
+      <div class="text-center py-4">
+        <h1 class="mb-2">NgantriAja</h1>
+        <p>
+          Ngantri nggak pakek lama nunggu... <br />
+          ya ngantri aja dulu
         </p>
       </div>
-    </form>
+      <form
+        #authForm="ngForm"
+        (ngSubmit)="onSubmit(authForm)"
+        *ngIf="!isLoading"
+      >
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>E-Mail</mat-label>
+            <input
+              matInput
+              placeholder="E-Mail"
+              type="text"
+              id="email"
+              ngModel
+              name="email"
+              required
+            />
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              id="password"
+              ngModel
+              name="password"
+              required
+              minlength="6"
+            />
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="float-end" style="margin-top: -15px">
+          <a routerLink="/forget-password">Lupa Password ?</a>
+        </div>
+
+        <div class="mt-5">
+          <button
+            mat-flat-button
+            color="primary"
+            class="rounded-pill button-large full-width"
+          >
+            Login
+          </button>
+
+          <p class="text-center mt-4">
+            Belum punya akun ?
+            <a routerLink="/auth/register">Daftar Sekarang</a>
+          </p>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

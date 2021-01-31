@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mobile-ngantriaja": {
+    "loket-ngantriaja": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -27,7 +27,7 @@
               "lodash",
               "dateformat"
             ],
-            "outputPath": "dist/mobile-ngantriaja",
+            "outputPath": "dist/loket-ngantriaja",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mobile-ngantriaja:build"
+            "browserTarget": "loket-ngantriaja:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mobile-ngantriaja:build:production"
+              "browserTarget": "loket-ngantriaja:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mobile-ngantriaja:build"
+            "browserTarget": "loket-ngantriaja:build"
           }
         },
         "test": {
@@ -129,11 +129,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mobile-ngantriaja:serve"
+            "devServerTarget": "loket-ngantriaja:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mobile-ngantriaja:serve:production"
+              "devServerTarget": "loket-ngantriaja:serve:production"
             }
           }
         },
@@ -144,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "mobile-ngantriaja"
+  "defaultProject": "loket-ngantriaja"
 }

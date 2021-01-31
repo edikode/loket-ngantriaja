@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyBk6CTc_3oJ1I8DyjRfsB65R18N9zU6i5I',
-    authDomain: 'ngantri-aja.firebaseapp.com',
+    apiKey: 'AIzaSyDlozRCq17e0KLSKdLGft3ue6egHNYldFI',
+    authDomain: 'ngantreaja.firebaseapp.com',
     databaseURL: 'https://ngantreaja.firebaseio.com',
-    projectId: 'ngantri-aja',
+    projectId: 'ngantreaja',
     storageBucket: 'ngantreaja.appspot.com',
-    messagingSenderId: '1026716539964',
-    appId: '1:1026716539964:web:1ca460bbf4d855faa27739',
-    measurementId: 'G-79FZ4743EM',
+    messagingSenderId: '301258051260',
+    appId: '1:301258051260:web:26f753e99515edd50c8ab9',
+    measurementId: 'G-PS7DSZQ48X',
   },
 };
 

@@ -2,13 +2,14 @@
   "targets": {
     "ngantreaja": {
       "hosting": {
-        "mobile-ngantriaja": [
+        "loket-ngantri": [
           "ngantreaja"
         ]
       }
     }
   },
   "projects": {
-    "default": "ngantri-aja"
+    "default": "loket-ngantri",
+    "y": "loket-ngantri"
   }
 }

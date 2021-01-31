@@ -1,206 +1,26 @@
 <app-header></app-header>
 
-<div class="mb-3">
+<div class="mt-5">
   <h1 class="mb-0">Holaa...</h1>
-  <p>NgantriAja hadir untuk membantumu mengatasi kejebak antrian panjang loo</p>
+  <p>Ambil antrian sesuai loket ya</p>
 </div>
 
 <div class="row">
-  <div class="col-12">
-    <h2 class="mb-2">Kategori</h2>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card" routerLink="category/kesehatan">
+  <div class="col-6 my-5" *ngFor="let loket of dataLoket">
+    <mat-card class="cartegory-card" (click)="getAntrean(loket, dataMitra)">
       <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card" routerLink="category/kesehatan">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card" routerLink="category/kesehatan">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card" routerLink="category/kesehatan">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-6 mb-3">
-    <mat-card class="cartegory-card">
-      <mat-card-content style="text-align: center">
-        <img
-          src="assets/image/healthcare.svg"
-          alt="gambar"
-          class="image-category"
-        />
-        <p>Kesehatan</p>
+        <!-- <p *ngFor="let antre of currentAntrean">{{ antre }}</p> -->
+        <h1>{{ loket.data.nama_loket }}</h1>
+
+        <p *ngIf="loket.data.waktu[6].status">
+          <b>Waktu Layanan:</b> {{ loket.data.waktu[6].hari }},
+          {{ loket.data.waktu[6].buka }} - {{ loket.data.waktu[6].tutup }}
+        </p>
+
+        <p *ngIf="!loket.data.waktu[6].status">
+          <b>Loket hari ini sudah penuh</b>
+        </p>
       </mat-card-content>
     </mat-card>
   </div>
 </div>
-
-<app-footer></app-footer>

@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyBk6CTc_3oJ1I8DyjRfsB65R18N9zU6i5I',
-    authDomain: 'ngantri-aja.firebaseapp.com',
+    apiKey: 'AIzaSyDEvc1pj9mkk6MNyfapYt0iVRH5NzirUC4',
+    authDomain: 'loket-ngantri.firebaseapp.com',
+    projectId: 'loket-ngantri',
     databaseURL: 'https://ngantreaja.firebaseio.com',
-    projectId: 'ngantri-aja',
     storageBucket: 'ngantreaja.appspot.com',
     messagingSenderId: '1026716539964',
     appId: '1:1026716539964:web:1ca460bbf4d855faa27739',

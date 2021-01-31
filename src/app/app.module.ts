@@ -22,6 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -31,6 +35,10 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -42,7 +50,9 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

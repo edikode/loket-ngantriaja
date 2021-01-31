@@ -47,7 +47,7 @@ export class AuthComponent implements OnDestroy {
       (resData) => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/recipes']);
+        this.router.navigate(['/home']);
       },
       (errorMessage) => {
         console.log(errorMessage);

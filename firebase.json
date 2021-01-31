@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/mobile-ngantriaja",
+    "public": "dist/loket-ngantriaja",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -11,17 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AuthComponent, RegisterComponent],
+  declarations: [AuthComponent],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild([
-      { path: '', component: AuthComponent },
-      { path: 'register', component: RegisterComponent },
-    ]),
+    RouterModule.forChild([{ path: '', component: AuthComponent }]),
     SharedModule,
 
     MatFormFieldModule,
