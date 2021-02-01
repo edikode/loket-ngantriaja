@@ -21,8 +21,7 @@ export class AppComponent implements OnInit {
     private connectionService: ConnectionService
   ) {}
   ngOnInit() {
-    // check connection printer
-    this.openPrinter();
+    // check connection internet
     this.checkConnection();
   }
 
@@ -39,21 +38,6 @@ export class AppComponent implements OnInit {
         );
       }
     });
-  }
-
-  openPrinter() {
-    this.printer
-      .open()
-      .then(() => {
-        console.log('print ok');
-      })
-      .catch((e: any) => {
-        // Show Error if get an Error
-        this.openDialog(
-          'Printer belum terhubung, Periksa kembali koneksi printer anda',
-          'printer'
-        );
-      });
   }
 
   openDialog(message: string, mode: string) {

@@ -15,12 +15,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DialogErrorComponent } from '../components/dialog-error/dialog-error.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     AlertComponent,
+    DialogErrorComponent,
     LoadingSpinnerComponent,
     PlaceholderDirective,
     DropdownDirective,
@@ -37,12 +39,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HeaderComponent,
     FooterComponent,
     AlertComponent,
+    DialogErrorComponent,
     LoadingSpinnerComponent,
     PlaceholderDirective,
     DropdownDirective,
     CommonModule,
   ],
-  entryComponents: [AlertComponent],
+  entryComponents: [AlertComponent, DialogErrorComponent],
   providers: [LoggingService],
 })
 export class SharedModule {}

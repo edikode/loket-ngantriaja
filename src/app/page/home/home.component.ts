@@ -3,6 +3,8 @@ import { LoketService } from '../../services/loket.service';
 
 import * as _dateformat from 'dateformat';
 import * as Recta from 'recta';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogErrorComponent } from 'src/app/components/dialog-error/dialog-error.component';
 
 @Component({
   selector: 'app-home',
@@ -23,9 +25,11 @@ export class HomeComponent implements OnInit {
 
   printer = new Recta(4228560628, 1811);
 
-  constructor(private loketService: LoketService) {}
+  constructor(private loketService: LoketService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.openPrinter();
+
     this.dataJson = localStorage.getItem('userData');
     this.dataUser = JSON.parse(this.dataJson);
     console.log(this.dataUser);
@@ -101,7 +105,7 @@ export class HomeComponent implements OnInit {
           alamat_loket: mitra.data.alamat.alamat_lengkap,
           no_antrean: id_antrean,
           // code_antrean: '123456789012',
-          code_antrean: '202101304123',
+          code_antrean: 'ACD-1232',
         };
         this.print(dataPrint);
       } else {
@@ -119,7 +123,7 @@ export class HomeComponent implements OnInit {
           alamat_loket: mitra.data.alamat.alamat_lengkap,
           no_antrean: id_antrean,
           // code_antrean: '123456789012',
-          code_antrean: '202101304123',
+          code_antrean: 'ABC-1234',
         };
         this.print(dataPrint);
       }
@@ -150,6 +154,40 @@ export class HomeComponent implements OnInit {
       .text('')
       .cut(true, 0)
       .print();
+  }
+
+  openPrinter() {
+    this.printer
+      .open()
+      .then(() => {
+        console.log('print ok');
+      })
+      .catch((e: any) => {
+        // Show Error if get an Error
+        this.openDialog(
+          'Printer belum terhubung, Periksa kembali koneksi printer anda',
+          'printer'
+        );
+      });
+  }
+
+  openDialog(message: string, mode: string) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    let data = {
+      message: message,
+      mode: mode,
+    };
+    dialogConfig.data = data;
+
+    const dialogRef = this.dialog.open(DialogErrorComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 
   pad(no_antrian: string, kuota: number, service_code: string) {

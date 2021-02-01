@@ -26,13 +26,15 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { DialogErrorComponent } from './components/dialog-error/dialog-error.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DialogErrorComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
@@ -58,7 +60,6 @@ import { DialogErrorComponent } from './components/dialog-error/dialog-error.com
     }),
   ],
   providers: [],
-  entryComponents: [DialogErrorComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

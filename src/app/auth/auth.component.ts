@@ -4,7 +4,7 @@ import {
   ViewChild,
   OnDestroy,
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
@@ -24,18 +24,25 @@ export class AuthComponent implements OnDestroy {
 
   private closeSub!: Subscription;
 
+  authForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    rememberMe: new FormControl(''),
+  });
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private componentFactoryResolver: ComponentFactoryResolver
   ) {}
 
-  onSubmit(form: NgForm) {
-    if (!form.valid) {
+  onSubmit() {
+    console.log(this.authForm);
+    if (!this.authForm.valid) {
       return;
     }
-    const email = form.value.email;
-    const password = form.value.password;
+    const email = this.authForm.value.email;
+    const password = this.authForm.value.password;
 
     let authObs: Observable<AuthResponseData>;
 
@@ -57,7 +64,7 @@ export class AuthComponent implements OnDestroy {
       }
     );
 
-    form.reset();
+    this.authForm.reset();
   }
 
   onHandleError() {
