@@ -28,6 +28,7 @@
     "@types/dateformat": "^3.0.1",
     "dateformat": "^4.5.0",
     "firebase": "^8.2.4",
+    "ng-connection-service": "^1.0.4",
     "recta": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
