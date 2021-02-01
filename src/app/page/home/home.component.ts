@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { LoketService } from '../../services/loket.service';
-import * as Recta from 'recta';
+
 import * as _dateformat from 'dateformat';
+import * as Recta from 'recta';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  providers: [],
 })
 export class HomeComponent implements OnInit {
   dataJson: any;
@@ -24,16 +26,6 @@ export class HomeComponent implements OnInit {
   constructor(private loketService: LoketService) {}
 
   ngOnInit(): void {
-    this.printer
-      .open()
-      .then(() => {
-        console.log('print ok');
-      })
-      .catch((e: any) => {
-        // Show Error if get an Error
-        console.log('error', e);
-      });
-
     this.dataJson = localStorage.getItem('userData');
     this.dataUser = JSON.parse(this.dataJson);
     console.log(this.dataUser);
@@ -148,7 +140,7 @@ export class HomeComponent implements OnInit {
       .text(data.no_antrean)
       .text('')
       .mode('A', true, false, false, false)
-      .barcode('UPC-A', data.code_antrean)
+      .barcode('CODE128', data.code_antrean)
       .text('')
       .mode('A', false, false, false, false)
       .text('Scan Barcode untuk pantau antrian anda \n lewat aplikasi')

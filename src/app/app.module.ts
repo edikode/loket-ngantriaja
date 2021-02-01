@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
 
 // ngrx belum
@@ -25,9 +26,10 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { DialogErrorComponent } from './components/dialog-error/dialog-error.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, DialogErrorComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -44,6 +46,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
+    MatDialogModule,
 
     // home
     MatGridListModule,
@@ -55,6 +58,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     }),
   ],
   providers: [],
+  entryComponents: [DialogErrorComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
