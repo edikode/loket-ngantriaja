@@ -1,8 +1,17 @@
 <app-header></app-header>
 
 <div class="mt-5">
-  <h1 class="mb-0">Holaa...</h1>
-  <p>Ambil antrian sesuai loket ya</p>
+  <div class="row">
+    <div class="col-lg-10">
+      <h1 class="mb-0">Holaa...</h1>
+      <p>Ambil antrian sesuai loket ya</p>
+    </div>
+    <div class="col-lg-2">
+      <button mat-button mat-stroked-button color="warn" (click)="logout()">
+        LOGOUT
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="row">

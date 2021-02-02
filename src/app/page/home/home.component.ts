@@ -5,6 +5,7 @@ import * as _dateformat from 'dateformat';
 import * as Recta from 'recta';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogErrorComponent } from 'src/app/components/dialog-error/dialog-error.component';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -25,14 +26,17 @@ export class HomeComponent implements OnInit {
 
   printer = new Recta(4228560628, 1811);
 
-  constructor(private loketService: LoketService, public dialog: MatDialog) {}
+  constructor(
+    private authService: AuthService,
+    private loketService: LoketService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.openPrinter();
 
     this.dataJson = localStorage.getItem('userData');
     this.dataUser = JSON.parse(this.dataJson);
-    console.log(this.dataUser);
     this.getMitra(this.dataUser.id);
   }
 
@@ -49,7 +53,6 @@ export class HomeComponent implements OnInit {
   getLoket(mitraId: string) {
     this.loketService.getLoket(mitraId).subscribe((res: any) => {
       if (res.length) {
-        console.log(res);
         this.dataLoket = res;
       }
     });
@@ -194,5 +197,9 @@ export class HomeComponent implements OnInit {
     no_antrian = no_antrian.toString();
     while (no_antrian.length < kuota) no_antrian = '0' + no_antrian;
     return service_code + no_antrian;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogErrorComponent } from './components/dialog-error/dialog-error.component';
 import * as Recta from 'recta';
 import { ConnectionService } from 'ng-connection-service';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +18,12 @@ export class AppComponent implements OnInit {
   isConnected = true;
 
   constructor(
+    private authService: AuthService,
     public dialog: MatDialog,
     private connectionService: ConnectionService
   ) {}
   ngOnInit() {
+    this.authService.autoLogin();
     // check connection internet
     this.checkConnection();
   }
