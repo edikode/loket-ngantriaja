@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /quiztest
+Disallow: /banners
+Disallow: /images
+Disallow: /ado/demo_db_edit.asp
+Disallow: /html/tryit.asp
+Disallow: /css/tryit.asp
