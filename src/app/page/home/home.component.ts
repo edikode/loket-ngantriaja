@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   jml_tiketBlmDilayani: number = 0;
 
   currentDate = new Date();
-  filterDate = _dateformat(this.currentDate, 'ddmmyyyy');
+  filterDate = _dateformat(this.currentDate, 'yyyymmdd');
 
   printer = new Recta(4228560628, 1811);
 
@@ -79,6 +79,10 @@ export class HomeComponent implements OnInit {
       let kuota = loket.data.kuota_antrian;
       let service_code = loket.data.service_code;
       let no_urut = res.total;
+      let no_next = res.total + 1;
+      let code = this.loketService.encryptCodeAntrean(service_code);
+      // membuat loket id rand
+      // let loketId = Math.floor(1000 + Math.random() * 9000);
 
       let dataPost = {
         no_antrean: no_urut + 1,
@@ -107,10 +111,12 @@ export class HomeComponent implements OnInit {
           nama_loket: loket.data.nama_loket,
           alamat_loket: mitra.data.alamat.alamat_lengkap,
           no_antrean: id_antrean,
-          // code_antrean: '123456789012',
-          code_antrean: 'ACD-1232',
+          // code_antrean: '2021020600010111', //code 93
+          code_antrean: this.filterDate + loket.id + code + no_next, //code 93
         };
-        this.print(dataPrint);
+
+        console.log(dataPrint);
+        // this.print(dataPrint);
       } else {
         let id_antrean = this.pad('1', kuota.toString().length, service_code);
         let settingDetail = {
@@ -125,8 +131,8 @@ export class HomeComponent implements OnInit {
           nama_loket: loket.data.nama_loket,
           alamat_loket: mitra.data.alamat.alamat_lengkap,
           no_antrean: id_antrean,
-          // code_antrean: '123456789012',
-          code_antrean: 'ABC-1234',
+          // code_antrean: '2021020600010111', //code 93
+          code_antrean: this.filterDate + loket.id + code + no_next, //code 93
         };
         this.print(dataPrint);
       }
@@ -147,7 +153,7 @@ export class HomeComponent implements OnInit {
       .text(data.no_antrean)
       .text('')
       .mode('A', true, false, false, false)
-      .barcode('CODE128', data.code_antrean)
+      .barcode('CODE93', data.code_antrean)
       .text('')
       .mode('A', false, false, false, false)
       .text('Scan Barcode untuk pantau antrian anda \n lewat aplikasi')

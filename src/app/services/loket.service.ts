@@ -90,4 +90,93 @@ export class LoketService {
       .doc('1')
       .set({ total: value }, { merge: true });
   }
+
+  encryptCodeAntrean(param: string) {
+    let code = param.toLocaleLowerCase();
+    let value = '';
+    switch (code) {
+      case 'a':
+        value = '01';
+        break;
+      case 'b':
+        value = '02';
+        break;
+      case 'c':
+        value = '03';
+        break;
+      case 'd':
+        value = '04';
+        break;
+      case 'e':
+        value = '05';
+        break;
+      case 'f':
+        value = '06';
+        break;
+      case 'g':
+        value = '07';
+        break;
+      case 'h':
+        value = '08';
+        break;
+      case 'i':
+        value = '09';
+        break;
+      case 'j':
+        value = '10';
+        break;
+      case 'k':
+        value = '11';
+        break;
+      case 'l':
+        value = '12';
+        break;
+      case 'm':
+        value = '13';
+        break;
+      case 'n':
+        value = '14';
+        break;
+      case 'o':
+        value = '15';
+        break;
+      case 'p':
+        value = '16';
+        break;
+      case 'q':
+        value = '17';
+        break;
+      case 'r':
+        value = '18';
+        break;
+      case 's':
+        value = '19';
+        break;
+      case 't':
+        value = '20';
+        break;
+      case 'u':
+        value = '21';
+        break;
+      case 'v':
+        value = '22';
+        break;
+      case 'w':
+        value = '23';
+        break;
+      case 'x':
+        value = '24';
+        break;
+      case 'y':
+        value = '25';
+        break;
+      case 'z':
+        value = '26';
+        break;
+      default:
+        value: '';
+    }
+
+    return value;
+  }
 }
