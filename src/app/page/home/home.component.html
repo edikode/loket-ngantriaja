@@ -1,35 +1,25 @@
-<app-header></app-header>
+<app-header [title]="dataMitra.data.nama_mitra" *ngIf="dataMitra"></app-header>
 
 <div class="mt-5">
   <div class="row">
-    <div class="col-lg-10">
-      <h1 class="mb-0">Holaa...</h1>
-      <p>Ambil antrian sesuai loket ya</p>
-    </div>
-    <div class="col-lg-2">
-      <button mat-button mat-stroked-button color="warn" (click)="logout()">
-        LOGOUT
-      </button>
+    <div class="col-lg-12">
+      <h1 class="text-center">Haloo Pengunjung...</h1>
+      <p class="lead text-center">
+        Tekan kolom loket dibawah ini untuk ambil antrian. <br />
+        Sesuaikan dengan loket yang kamu inginkan yaa...
+      </p>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-6 my-5" *ngFor="let loket of dataLoket">
-    <mat-card class="cartegory-card" (click)="getAntrean(loket, dataMitra)">
-      <mat-card-content style="text-align: center">
-        <!-- <p *ngFor="let antre of currentAntrean">{{ antre }}</p> -->
-        <h1>{{ loket.data.nama_loket }}</h1>
-
-        <p *ngIf="loket.data.waktu[6].status">
-          <b>Waktu Layanan:</b> {{ loket.data.waktu[6].hari }},
-          {{ loket.data.waktu[6].buka }} - {{ loket.data.waktu[6].tutup }}
-        </p>
-
-        <p *ngIf="!loket.data.waktu[6].status">
-          <b>Loket hari ini sudah penuh</b>
-        </p>
-      </mat-card-content>
-    </mat-card>
+  <div class="col-lg-6 my-5" *ngFor="let loket of dataLoket">
+    <app-loket [dataLoket]="loket" [dataMitra]="dataMitra"></app-loket>
   </div>
 </div>
+
+<!-- <div>
+  <button mat-button mat-stroked-button color="warn" (click)="logout()">
+    LOGOUT
+  </button>
+</div> -->

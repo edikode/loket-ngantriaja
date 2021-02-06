@@ -2,25 +2,16 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row class="d-flex justify-content-between align-items-center">
       <span></span>
-      <span>Ngantri Aja</span>
-      <span></span>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</header>
-
-<header class="fixed-top" *ngIf="!mainMenu">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row class="d-flex justify-content-between">
+      <span class="text-uppercase">{{ title }}</span>
       <button
-        routerLink="{{ prevLink }}"
+        *ngIf="!full"
+        (click)="openFullscreen()"
         mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with arrow-back icon"
+        aria-label="Example icon-button with full screen icon"
       >
-        <mat-icon>arrow_back</mat-icon>
+        <mat-icon class="width-icon">fullscreen</mat-icon>
       </button>
-      <span class="text-capitalize">{{ title }}</span>
-      <span class="width-icon"></span>
+      <span *ngIf="full"></span>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
