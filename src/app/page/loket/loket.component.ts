@@ -63,7 +63,10 @@ export class LoketComponent implements OnInit {
     console.log('kuota antrean', parseInt(loket.data.kuota_antrian));
     console.log('total', parseInt(setting.total));
 
-    if (parseInt(setting.total) < parseInt(loket.data.kuota_antrian)) {
+    if (
+      parseInt(setting.total) < parseInt(loket.data.kuota_antrian) &&
+      this.statusBuka
+    ) {
       let kuota = loket.data.kuota_antrian;
       let service_code = loket.data.service_code;
       let code = this.loketService.encryptCodeAntrean(service_code);
@@ -121,7 +124,7 @@ export class LoketComponent implements OnInit {
           // code_antrean: '2021020600010111', //code 93
           code_antrean: this.filterDate + loket.id + code + no_next,
         };
-        // this.print(dataPrint);
+        this.print(dataPrint);
       }
     }
   }
